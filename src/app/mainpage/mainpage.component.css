@@ -1,0 +1,68 @@
+.top_error{
+    margin: 0px;
+}
+
+.row{
+    --bs-gutter-x: 0rem;
+}
+
+#right-pane{
+    padding: 1px 16px;
+} 
+
+.filters{
+    padding: 0 10px;
+    width:90%;
+    margin:auto;
+    margin-bottom: 4%;
+}
+
+.ad_boxes{
+    width:90%;
+    margin:auto
+}
+.offer-content{
+    margin-bottom: 4%;
+    width: 30%;
+    background-color: #def2f1;
+    padding: 0px;
+}
+
+.offer-content h5{
+    background-color: #17252ac9;
+    color:white;
+    padding:10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.offer-content .btn, .like_fil .btn, .date_fil .btn{
+    background-color: #3aafa9;
+    color: white;
+    width: 100%;
+}
+.offer-content .btn:hover, .like_fil .btn:hover, .date_fil .btn:hover{
+    background-color: #2b7a78;
+}
+
+#left-pane{
+    background-color: #def2f1;
+    position: fixed;
+    height: 100%;
+}
+
+#left-pane a{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+#left-pane a.active {
+    background-color: #3aafa9;
+    color: white;
+}
+  
+#left-pane a:hover:not(.active) {
+    background-color: #17252a;
+    color: white;
+}

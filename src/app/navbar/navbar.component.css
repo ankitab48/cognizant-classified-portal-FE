@@ -1,0 +1,25 @@
+.navbar-nav>li {
+    /* margin-right: 30px; */
+    /* background: red; */
+    padding: 5px 10px;
+}
+
+nav {
+    background-color: #2b7a78 ;
+}
+
+a.nav-link {
+    opacity: 1 !important;
+    color: white !important;
+}
+
+.navbar-nav>li:hover{
+    background-color:#236463;
+}
+
+.navbar{
+    padding:0px
+}
+.material-icons{
+    margin-right: 30px;
+}

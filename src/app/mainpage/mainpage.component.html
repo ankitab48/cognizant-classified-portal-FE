@@ -1,0 +1,72 @@
+<div>
+    <div class="alert alert-danger top_error" *ngIf="pageError!='' && showError">
+        {{pageError}}
+        <button class="material-icons" style="float:right" (click)="closebar()">close</button>
+    </div>
+    <div class="row">
+        <!--left pane-->
+        <div class="col-lg-2">
+            <div class="col-lg-2 col-md-2 col-sm-12" id="left-pane">
+                <div><a class="active" routerLink="/main">Posted Offers</a></div>
+                <div><a routerLink="/addOffer">Post an offer</a></div>
+                <div><a routerLink="/myOffers">My offers</a></div>
+                <div><a (click)="showRecentlyLiked()" style="cursor: pointer;">Recently liked
+                        offers</a></div>
+            </div>
+        </div>
+
+        <!--right pane-->
+        <div class="col-lg-10 col-md-9 col-sm-12 " id="right-pane" style="padding-top:20px; ">
+
+            <!-- options -->
+            <div class="d-flex flex-row justify-content-between filters">
+
+                <!-- filter by category-->
+                <div>
+                    <select class="form-control" (change)="onCategoryChange()" #category>
+                        <option selected>Filter by category</option>
+                        <option>Electronics</option>
+                        <option>Plants</option>
+                        <option>Furniture</option>
+                        <option>Accessories</option>
+                    </select>
+                </div>
+
+                <!-- filter by top likes-->
+                <div class="like_fil">
+                    <button class="btn" (click)="filterByTopLikes()">Filter by top likes</button>
+                </div>
+
+                <!-- filter by posted date-->
+                <div class="date_fil">
+                    <div class='input-group'>
+                        <input type='text' class='form-control' placeholder="filter by posted-date" #postedDate>
+                        <div class="input-group-append ">
+                            <button class="btn" (click)="filterByPostedDate()">search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- offers-->
+            <div class="row ad_boxes d-flex justify-content-between">
+                <div *ngFor="let offer of offers " class="offer-content">
+                    <h5 class="card-title">
+                        {{offer.name}}
+                    </h5>
+                    <p class="card-text ">
+                    <div class="d-flex flex-column ">
+                        <div class="p-2 "><b>Posted on</b>: {{offer.openDate | date:'longDate'}}</div>
+                        <div class="p-2 "><b>Engaged</b>: {{offer.engagedDate==null && offer.closedDate == null?'not yet':'engaged'}}
+                        </div>
+                        <div class="p-2"><b>Status</b>: {{offer.closedDate == null ? 'open':'closed'}}</div>
+                        <div class="p-2"><b>Category:</b> {{offer.category}}</div>
+                        <div class="p-2"><b>Likes:</b> {{offer.likes}}</div>
+                    </div><br>
+                    <a [routerLink]="['/offerDetails',offer.id]" class="btn">Open</a>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>

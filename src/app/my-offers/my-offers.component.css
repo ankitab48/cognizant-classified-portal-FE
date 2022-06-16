@@ -1,0 +1,40 @@
+#right-pane{
+    padding: 1px 16px;
+}
+
+#right-pane h1{
+    font-weight: 100;
+    margin:30px 0px;
+}
+.offers-content{
+    margin-bottom: 4%;
+    width: 28%;
+    background-color: #def2f1;
+    margin-right: 35px;
+    margin-left: 20px;
+    padding: 0px;
+}
+
+.offers-content h5{
+    background-color: #17252ac9;
+    color:white;
+    padding:10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.offers-content .btn_open{
+    background-color: #3aafa9;
+    color: white;
+    width: 100%;
+}
+.offers-content .btn_edit{
+    background-color: #d03535;
+    color: white;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.btn-dark{
+    width: 6%;
+    margin-left: 10%
+}

@@ -1,0 +1,42 @@
+<div>
+    <div class="alert alert-danger" *ngIf="pageError!=''">{{pageError}}</div>
+    <div class="row">
+        <!-- left pane -->
+        <div class="col-lg-1">
+            <!-- <app-side-nav></app-side-nav> -->
+        </div>
+
+        <!-- right pane -->
+        <div class="col-lg-10 col-md-9 col-sm-12 " id="right-pane" style="padding-top:20px; ">
+            <h1>My Offers</h1>
+            <div class="">
+                <div class="row ad_boxes d-flex">
+
+                    <!-- if no offers are present-->
+                    <div *ngIf="offers.length==0">
+                        <h1 style="font-weight: 100;">No Offers Found</h1>
+                    </div>
+
+                    <!-- loop the offers-->
+                    <div class="col-lg-3 col-md-4 col-sm-12 offers-content" *ngFor="let offer of offers">
+                        <div class="d-flex flex-column">
+                            <h5>{{offer.name}}</h5>
+                            <div class="p-2 "><b>Posted on</b>: {{offer.openDate | date:'longDate'}}</div>
+                            <div class="p-2 "><b>Engaged</b>: {{offer.engagedDate==null && offer.closedDate == null?'not
+                                yet':'engaged'}}
+                            </div>
+                            <div class="p-2"><b>Status</b>: {{offer.closedDate == null ? 'open':'closed'}}</div>
+                            <div class="p-2"><b>Category:</b> {{offer.category}}</div>
+                            <div class="p-2"><b>Likes:</b> {{offer.likes}}</div>
+                        </div>
+                        <a [routerLink]="['/offerDetails',offer.id]" class="btn btn_open">Open</a><br>
+                        <a [routerLink]="['/editOffer',offer.id]" class="btn btn_edit">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-dark" routerLink="/main">Go back</a>
+    </div>
+
+
+</div>

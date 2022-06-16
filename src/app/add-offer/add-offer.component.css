@@ -1,0 +1,12 @@
+.offer-details-content {
+    margin-top: 2%;
+}
+
+.offer-details-content>h1 {
+    font-weight: 100;
+}
+
+.btn_submit{
+    background-color: #3aafa9;
+    color: white;
+}
